@@ -1,0 +1,11 @@
+#
+# SPDX-FileCopyrightText: 2021 Dominik Wombacher <dominik@wombacher.cc>
+# SPDX-License-Identifier: CC0-1.0
+#
+repos:
+- hooks:
+  - id: commitizen
+    stages:
+    - commit-msg
+  repo: https://github.com/commitizen-tools/commitizen
+  rev: v2.20.0
