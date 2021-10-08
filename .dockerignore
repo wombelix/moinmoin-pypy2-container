@@ -1,0 +1,13 @@
+#
+# SPDX-FileCopyrightText: 2021 Dominik Wombacher <dominik@wombacher.cc>
+# SPDX-License-Identifier: CC0-1.0
+#
+tmp/
+.cz.yaml
+.pre-commit-config.yaml
+.git
+.gitignore
+LICENSES/
+README.md
+CHANGELOG.md
+.reuse/
