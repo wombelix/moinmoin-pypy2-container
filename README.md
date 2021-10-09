@@ -20,7 +20,7 @@ Ready to use, based on openSUSE Leap and the alternative Python Runtime [PyPy](h
     * [Backup and Restore](#backup-and-restore)
     * [Expose Port](#expose-port)
     * [Environment Variables](#environment-variables)
-    * [User &amp; Password](#user--password)
+    * [User and Password](#user-and-password)
     * [Custom SSL Certificates](#custom-ssl-certificates)
 * [Components](#components)
 * [Contribution](#contribution)
@@ -159,7 +159,7 @@ Configuration complete; ready for start up
 Starting nginx...
 ```
 
-## User & Password
+## User and Password
 
 If you started without existing wiki data, a new `superuser` will be created during the initial setup. You can define a password by setting the environment variable `MAPWD`, otherwise a random password will be generated for you. In this case, you can find it in the `podman logs` output, as in the above `Environment Variables` example.
 
