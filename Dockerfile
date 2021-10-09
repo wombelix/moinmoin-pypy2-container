@@ -48,4 +48,6 @@ COPY fs/leap/ /
 
 EXPOSE 443
 
+VOLUME /usr/local/share/moin/
+
 ENTRYPOINT /usr/local/bin/entrypoint.sh
