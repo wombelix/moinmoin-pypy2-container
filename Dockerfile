@@ -7,9 +7,9 @@ LABEL org.opencontainers.image.authors="Dominik Wombacher dominik@wombacher.cc"
 LABEL org.opencontainers.image.title="moinmoin-pypy2"
 LABEL org.opencontainers.image.description="MoinMoin Wiki powered by pypy2, uswgi, nginx and openSUSE Leap"
 LABEL org.opencontainers.image.licenses="AGPL-3.0-or-later"
-LABEL org.opencontainers.image.url="https://dominik.wombacher.cc/pages/projects.html"
-LABEL org.opencontainers.image.documentation="https://codeberg.org/wombelix/container-moinmoin-pypy2/src/branch/main/README.md"
-LABEL org.opencontainers.image.source="https://codeberg.org/wombelix/container-moinmoin-pypy2"
+LABEL org.opencontainers.image.url="https://dominik.wombacher.cc/"
+LABEL org.opencontainers.image.documentation="https://codeberg.org/wombelix/moinmoin-pypy2-container/src/branch/main/README.md"
+LABEL org.opencontainers.image.source="https://codeberg.org/wombelix/moinmoin-pypy2-container"
 LABEL org.opencontainers.image.base.name="registry.opensuse.org/opensuse/leap:15.3"
 
 ENV PYTHONPATH=/usr/local/share/moin
