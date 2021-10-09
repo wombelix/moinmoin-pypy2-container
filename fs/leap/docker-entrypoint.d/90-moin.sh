@@ -27,7 +27,8 @@ MOINADMTPL="/tmp/moinmoin_administration.page"
 MOINPKGBIN="/usr/local/venv/site-packages/MoinMoin/packages.py"
 MOINPKGFILE="/usr/local/share/moin/underlay/pages/LanguageSetup/attachments/English--essential_pages.zip"
 NGINXCFG="/etc/nginx/vhosts.d/moinmoin.conf"
-
+SSLCRT="/etc/ssl/certs/cert.pem"
+SSLKEY="/etc/ssl/private/key.pem"
 
 #
 # If no custom values provided, map with defaults
@@ -143,7 +144,7 @@ fi
 #
 # Generate self-signed SSL Certificate
 #
-if [ ! -r "/etc/ssl/certs/cert.pem" ] && [ ! -r "/etc/ssl/certs/key.pem" ]; then
+if [ ! -r "$SSLCRT" ] && [ ! -r "$SSLKEY" ]; then
   { cd /tmp && \
     openssl req -x509 -newkey rsa:4096 -sha256 -nodes -keyout key.pem -out cert.pem -subj "/CN="$FQDN"" -days 3650 && \
     mv cert.pem /etc/ssl/certs/ && \
