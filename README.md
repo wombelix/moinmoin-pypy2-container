@@ -67,7 +67,7 @@ The following examples were tested with `podman` (3.2.3) in rootless mode on ope
 
 ## Pull
 
-The pre-build image is available on [quay.io](https://quay.io/repository/wombelix/moinmoin-pypy2), you can pull it by running:
+The pre-build image is available on [quay.io](https://quay.io/repository/wombelix/moinmoin-pypy2?tab=info), you can pull it by running:
 
 ```
 podman pull quay.io/wombelix/moinmoin-pypy2
