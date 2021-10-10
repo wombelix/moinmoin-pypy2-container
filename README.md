@@ -73,7 +73,7 @@ The pre-build image is available on [quay.io](https://quay.io/repository/wombeli
 podman pull quay.io/wombelix/moinmoin-pypy2
 ```
 
-Tag `latest` is equal to the `main` branch, which is used for development and therefore might break. You should choose a specific release Tag instead.
+The container image with label `latest` is based to the last git tag and release. Branches like `main` will not automatically build and uploaded.
 
 ## Persistent Volume
 
