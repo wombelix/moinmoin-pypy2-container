@@ -8,6 +8,8 @@ OCI compliant container image to run MoinMoin wiki, accessible via HTTPS, delive
 
 Ready to use, based on openSUSE Leap and the alternative Python Runtime [PyPy](https://www.pypy.org).
 
+[![Container Repository on Quay](https://quay.io/repository/wombelix/moinmoin-pypy2/status)](https://quay.io/repository/wombelix/moinmoin-pypy2)
+
 # Table of Content
 
 * [Why](#why)
