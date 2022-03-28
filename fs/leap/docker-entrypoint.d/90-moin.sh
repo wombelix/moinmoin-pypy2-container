@@ -20,6 +20,7 @@ SETUPSTR="MoinMoin Setup:"
 DEFAULT_MAUSR="MoinAdmin"
 DEFAULT_MAEML="admin@moinmoin-pypyp2.localhost"
 DEFAULT_FQDN="moinmoin-pypy2.localhost"
+DEFAULT_SITENAME="Untitled Wiki"
 MOINLOG="/var/log/moin.log"
 MOINCFG="/usr/local/share/moin/wikiconfig.py"
 MOINFPTPL="/tmp/moinmoin_front.page"
@@ -45,6 +46,10 @@ if [ -z "$MAEML" ]; then
   MAEML=$DEFAULT_MAEML
 fi
 
+if [ -z "$MSITENAME" ]; then
+  MSITENAME=$DEFAULT_SITENAME
+fi
+
 
 #
 # Load Python Virtual Environment
@@ -68,38 +73,58 @@ if [ "$DATAUSERS" = "0" ]; then
 
   if [ "$RC" = "0" ]; then
     echo "$SETUPSTR Superuser '"$MAUSR"' successfully created."
-    
-    if [ "$MAUSR" != "$DEFAULT_MAUSR" ]; then
-      echo "$SETUPSTR Custom superuser defined, adjusting configs"
-
-      sed -i "s/$DEFAULT_MAUSR/$MAUSR/g" $MOINCFG
-      grep -q $MAUSR $MOINCFG
-      RC=$?
-      
-      if [ "$RC" = "0" ]; then
-        echo "$SETUPSTR '"$DEFAULT_MAUSR"' successfully replaced with '"$MAUSR"' in wikiconfig"
-      else
-        echo "$SETUPSTR '"$DEFAULT_MAUSR"' could not be replaced with '"$MAUSR"' in wikiconfig. Check '"$MOINCFG"'."
-      fi
-
-      sed -i "s/$DEFAULT_MAUSR/$MAUSR/g" $MOINFPTPL
-      grep -q $MAUSR $MOINFPTPL
-      RC=$?
-      
-      if [ "$RC" = "0" ]; then
-        echo "$SETUPSTR '"$DEFAULT_MAUSR"' successfully replaced with '"$MAUSR"' in 'FrontPage' template"
-      else
-        echo "$SETUPSTR '"$DEFAULT_MAUSR"' could not be replaced with '"$MAUSR"' in 'FrontPage' template. Check '"$MOINCFG"'."
-      fi
-
-    fi
-
   else
     echo "$SETUPSTR Failed to create superuser '"$MAUSR"'. See '"$MOINLOG"' for details."
   fi
 
 else
   echo "$SETUPSTR Existing user accounts found ($DATAUSERS), skip creation of superuser '"$MAUSR"'."
+fi
+
+
+#
+# custom superuser
+#
+if [ "$MAUSR" != "$DEFAULT_MAUSR" ]; then
+  echo "$SETUPSTR Custom superuser defined, adjusting configs"
+
+  sed -i "s/$DEFAULT_MAUSR/$MAUSR/g" $MOINCFG
+  grep -q $MAUSR $MOINCFG
+  RC=$?
+
+  if [ "$RC" = "0" ]; then
+    echo "$SETUPSTR '"$DEFAULT_MAUSR"' successfully replaced with '"$MAUSR"' in wikiconfig"
+  else
+    echo "$SETUPSTR '"$DEFAULT_MAUSR"' could not be replaced with '"$MAUSR"' in wikiconfig. Check '"$MOINCFG"'."
+  fi
+
+  sed -i "s/$DEFAULT_MAUSR/$MAUSR/g" $MOINFPTPL
+  grep -q $MAUSR $MOINFPTPL
+  RC=$?
+
+  if [ "$RC" = "0" ]; then
+    echo "$SETUPSTR '"$DEFAULT_MAUSR"' successfully replaced with '"$MAUSR"' in 'FrontPage' template"
+  else
+    echo "$SETUPSTR '"$DEFAULT_MAUSR"' could not be replaced with '"$MAUSR"' in 'FrontPage' template. Check '"$MOINCFG"'."
+  fi
+fi
+
+
+#
+# custom sitename
+#
+if [ "$MSITENAME" != "$DEFAULT_SITENAME" ]; then
+  echo "$SETUPSTR Custom sitename defined, adjusting configs"
+
+  sed -i "s/$DEFAULT_SITENAME/$MSITENAME/g" $MOINCFG
+  grep -q $MSITENAME $MOINCFG
+  RC=$?
+
+  if [ "$RC" = "0" ]; then
+    echo "$SETUPSTR '"$DEFAULT_SITENAME"' successfully replaced with '"$MSITENAME"' in wikiconfig"
+  else
+    echo "$SETUPSTR '"$DEFAULT_SITENAME"' could not be replaced with '"$MSITENAME"' in wikiconfig. Check '"$MOINCFG"'."
+  fi
 fi
 
 
@@ -186,6 +211,7 @@ if [ "$FQDN" != "$DEFAULT_FQDN" ]; then
 else
   echo "$SETUPSTR No custom FQDN defined, skip nginx reconfiguration."
 fi
+
 
 #
 # Cleanup
