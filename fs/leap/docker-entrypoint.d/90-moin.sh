@@ -22,7 +22,8 @@ DEFAULT_MAEML="admin@moinmoin-pypyp2.localhost"
 DEFAULT_FQDN="moinmoin-pypy2.localhost"
 DEFAULT_SITENAME="Untitled Wiki"
 MOINLOG="/var/log/moin.log"
-MOINCFG="/usr/local/share/moin/wikiconfig.py"
+MOINCFGDIR="/usr/local/share/moin"
+MOINCFG="$MOINCFGDIR/wikiconfig.py"
 MOINFPTPL="/tmp/moinmoin_front.page"
 MOINADMTPL="/tmp/moinmoin_administration.page"
 MOINPKGBIN="/usr/local/venv/site-packages/MoinMoin/packages.py"
@@ -211,6 +212,16 @@ if [ "$FQDN" != "$DEFAULT_FQDN" ]; then
 else
   echo "$SETUPSTR No custom FQDN defined, skip nginx reconfiguration."
 fi
+
+
+#
+# perform preventative and upgrade maintenance
+#
+/usr/local/venv/bin/moin --wiki-url=$FQDN --config-dir=$MOINCFGDIR maint cleancache
+/usr/local/venv/bin/moin --wiki-url=$FQDN --config-dir=$MOINCFGDIR migration data --all
+/usr/local/venv/bin/moin --wiki-url=$FQDN --config-dir=$MOINCFGDIR maint makecache
+/usr/local/venv/bin/moin --wiki-url=$FQDN --config-dir=$MOINCFGDIR account check --usersunique
+/usr/local/venv/bin/moin --wiki-url=$FQDN --config-dir=$MOINCFGDIR account check --emailsunique
 
 
 #
