@@ -29,11 +29,4 @@ steps:
             from_secret: quay_user
           password:
           from_secret: quay_pass
-    when:
-      - event:
-        - push
-        - tag
-        - cron
-        - manual
-        branch: main
 
