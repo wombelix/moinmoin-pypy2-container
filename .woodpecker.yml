@@ -1,16 +1,19 @@
+# SPDX-FileCopyrightText: 2023 Dominik Wombacher <dominik@wombacher.cc>
+#
+# SPDX-License-Identifier: CC0-1.0
+
 variables:
   - &file Dockerfile
   - &repo_cb codeberg.org/${CI_REPO_OWNER}/moinmoin-pypy2
   - &repo_quay quay.io/${CI_REPO_OWNER}/moinmoin-pypy2
 
+steps:
   publish:
     image: woodpeckerci/plugin-docker-buildx
     settings:
       dockerfile: *file
       platforms: linux/amd64
-      repo: 
-				- *repo_cb
-				- *repo_quay
+      repo: *repo_cb,*repo_quay
       tags:
         - latest
         - ${CI_COMMIT_SHA}
