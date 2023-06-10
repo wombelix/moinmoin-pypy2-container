@@ -1,0 +1,36 @@
+variables:
+  - &file Dockerfile
+  - &repo_cb codeberg.org/${CI_REPO_OWNER}/moinmoin-pypy2
+  - &repo_quay quay.io/${CI_REPO_OWNER}/moinmoin-pypy2
+
+  publish:
+    image: woodpeckerci/plugin-docker-buildx
+    settings:
+      dockerfile: *file
+      platforms: linux/amd64
+      repo: 
+				- *repo_cb
+				- *repo_quay
+      tags:
+        - latest
+        - ${CI_COMMIT_SHA}
+			no_cache: true
+			purge: true
+			auto_tag: true
+			logins:
+				- registry: codeberg.org
+          username: ${CI_REPO_OWNER}
+          password:
+            from_secret: cb_token_write_package
+				- registry: quay.io
+          username:
+						from_secret: quay_user
+          password:
+            from_secret: quay_pass
+		when:
+			- event:
+          - push
+          - tag
+          - cron
+          - manual
+  		  branch: main
