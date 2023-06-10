@@ -9,6 +9,7 @@ OCI compliant container image to run MoinMoin wiki, accessible via HTTPS, delive
 Ready to use, based on openSUSE Leap and the alternative Python Runtime [PyPy](https://www.pypy.org).
 
 [![Container Repository on Quay](https://quay.io/repository/wombelix/moinmoin-pypy2/status)](https://quay.io/repository/wombelix/moinmoin-pypy2) [![REUSE status](https://api.reuse.software/badge/codeberg.org/wombelix/moinmoin-pypy2-container)](https://api.reuse.software/info/codeberg.org/wombelix/moinmoin-pypy2-container)
+[![status-badge](https://ci.codeberg.org/api/badges/wombelix/moinmoin-pypy2-container/status.svg)](https://ci.codeberg.org/wombelix/moinmoin-pypy2-container)
 
 # Table of Content
 
