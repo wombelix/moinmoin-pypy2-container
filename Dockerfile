@@ -1,25 +1,25 @@
 #
-# SPDX-FileCopyrightText: 2021 Dominik Wombacher <dominik@wombacher.cc>
+# SPDX-FileCopyrightText: 2023 Dominik Wombacher <dominik@wombacher.cc>
 # SPDX-License-Identifier: AGPL-3.0-or-later
 #
-FROM registry.opensuse.org/opensuse/leap:15.3
+FROM registry.opensuse.org/opensuse/leap:15.5
 LABEL org.opencontainers.image.authors="Dominik Wombacher dominik@wombacher.cc"
 LABEL org.opencontainers.image.title="moinmoin-pypy2"
 LABEL org.opencontainers.image.description="MoinMoin Wiki powered by pypy2, uswgi, nginx and openSUSE Leap"
 LABEL org.opencontainers.image.licenses="AGPL-3.0-or-later"
 LABEL org.opencontainers.image.url="https://dominik.wombacher.cc/"
-LABEL org.opencontainers.image.documentation="https://codeberg.org/wombelix/moinmoin-pypy2-container/src/branch/main/README.md"
-LABEL org.opencontainers.image.source="https://codeberg.org/wombelix/moinmoin-pypy2-container"
-LABEL org.opencontainers.image.base.name="registry.opensuse.org/opensuse/leap:15.3"
+LABEL org.opencontainers.image.documentation="https://git.sr.ht/~wombelix/moinmoin-pypy2-container/tree/main/item/README.md"
+LABEL org.opencontainers.image.source="https://git.sr.ht/~wombelix/moinmoin-pypy2-container"
+LABEL org.opencontainers.image.base.name="registry.opensuse.org/opensuse/leap:15.5"
 
 ENV PYTHONPATH=/usr/local/share/moin
 
 RUN zypper -n --no-refresh in --no-recommends python3-virtualenv python3-pip curl tar bzip2 gzip gcc nginx && \
     cd /usr/local/ && \
-    curl https://downloads.python.org/pypy/pypy2.7-v7.3.5-linux64.tar.bz2 -O && \
-    tar xfj pypy2.7-v7.3.5-linux64.tar.bz2 && \
-    rm -f pypy2.7-v7.3.5-linux64.tar.bz2 && \
-    virtualenv -p pypy2.7-v7.3.5-linux64/bin/pypy /usr/local/venv && \
+    curl https://downloads.python.org/pypy/pypy2.7-v7.3.13-linux64.tar.bz2 -O && \
+    tar xfj pypy2.7-v7.3.13-linux64.tar.bz2 && \
+    rm -f pypy2.7-v7.3.13-linux64.tar.bz2 && \
+    virtualenv -p pypy2.7-v7.3.13-linux64/bin/pypy /usr/local/venv && \
     source /usr/local/venv/bin/activate && \
     cd /tmp && \
     curl http://static.moinmo.in/files/moin-1.9.11.tar.gz -O && \
