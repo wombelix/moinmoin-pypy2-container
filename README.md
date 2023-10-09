@@ -9,8 +9,7 @@ OCI compliant container image to run MoinMoin wiki, accessible via HTTPS, delive
 Ready to use, based on openSUSE Leap and the alternative Python Runtime [PyPy](https://www.pypy.org).
 
 [![Container Repository on Quay](https://quay.io/repository/wombelix/moinmoin-pypy2/status)](https://quay.io/repository/wombelix/moinmoin-pypy2)
-[![REUSE status](https://api.reuse.software/badge/codeberg.org/wombelix/moinmoin-pypy2-container)](https://api.reuse.software/info/codeberg.org/wombelix/moinmoin-pypy2-container)
-[![status-badge](https://ci.codeberg.org/api/badges/wombelix/moinmoin-pypy2-container/status.svg)](https://ci.codeberg.org/wombelix/moinmoin-pypy2-container)
+[![REUSE status](https://api.reuse.software/badge/git.sr.ht/~wombelix/moinmoin-pypy2-container)](https://api.reuse.software/info/git.sr.ht/~wombelix/moinmoin-pypy2-container)
 
 # Table of Content
 
@@ -39,6 +38,8 @@ MoinMoin requires Python 2, the successor [moin2](https://github.com/moinwiki/mo
 It might be that User still want to keep using the latest stable release and wait with the migration.
 
 The official Python 2 Runtime is [End-of-Life](https://www.python.org/doc/sunset-python-2/) but PyPy will support Python 2 ["forever"](https://doc.pypy.org/en/latest/faq.html#how-long-will-pypy-support-python2) and provide updates in future.
+
+**Update 2023-10-09**: There is an alpha release of moin2 available on https://test.pypi.org/project/moin/, installation instructions can be found at https://github.com/moinwiki/moin/issues/1197.
 
 # Features
 
@@ -200,3 +201,4 @@ Unless otherwise stated: `GNU Affero General Public License v3.0 or later`
 All files contain license information either as `header comment` or `corresponding .license` file.
 
 [REUSE](https://reuse.software) from the [FSFE](https://fsfe.org/) implemented to verify license and copyright compliance.
+
