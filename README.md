@@ -1,5 +1,5 @@
 <!--
- SPDX-FileCopyrightText: 2021 Dominik Wombacher <dominik@wombacher.cc>
+ SPDX-FileCopyrightText: 2023 Dominik Wombacher <dominik@wombacher.cc>
  SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 # MoinMoin Wiki Container, powered by pypy2
@@ -68,7 +68,7 @@ The official Python 2 Runtime is [End-of-Life](https://www.python.org/doc/sunset
 
 # Usage
 
-The following examples were tested with `podman` (3.2.3) in rootless mode on openSUSE Tumbleweed.
+The following examples were tested with `podman` (4.7.0) in rootless mode on openSUSE Tumbleweed (20231005).
 
 ## Pull
 
@@ -183,9 +183,9 @@ podman run -d -p 8443:443 --name wiki -v ~/wiki/cert.pem:/etc/ssl/certs/cert.pem
 # Components
 
 - MoinMoin (1.9.11)
-- pypy2 (7.3.5, compatible to Python 2.7.18)
-- uwsgi (2.0.20)
-- openSUSE Leap (15.3)
+- pypy2 (7.3.13, compatible to Python 2.7)
+- uwsgi (2.0.22)
+- openSUSE Leap (15.5)
 
 # Source
 
