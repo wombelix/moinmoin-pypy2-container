@@ -26,6 +26,8 @@ Ready to use, based on openSUSE Leap and the alternative Python Runtime [PyPy](h
     * [User and Password](#user-and-password)
     * [Custom SSL Certificates](#custom-ssl-certificates)
 * [Components](#components)
+* [Source](#source)
+* [Releases](#releases)
 * [Contribution](#contribution)
 * [License](#license)
 
@@ -185,14 +187,34 @@ podman run -d -p 8443:443 --name wiki -v ~/wiki/cert.pem:/etc/ssl/certs/cert.pem
 - uwsgi (2.0.20)
 - openSUSE Leap (15.3)
 
-# Contribution
+# Source
 
-Please don't hesistate to provide Feedback, open an Issue or create an Pull / Merge Request.
+The primary location is: https://git.sr.ht/~wombelix/moinmoin-pypy2-container
 
-The repository is available on [Codeberg](https://codeberg.org/wombelix/moinmoin-pypy2-container), 
+Mirrors of the repository are available on 
+[Codeberg](https://codeberg.org/wombelix/moinmoin-pypy2-container), 
 [Gitlab](https://gitlab.com/wombelix/moinmoin-pypy2-container) and 
-[Github](https://github.com/wombelix/moinmoin-pypy2-container), 
-just pick the platform you are most comfortable with.
+[Github](https://github.com/wombelix/moinmoin-pypy2-container).
+
+# Releases
+
+Container images will be created and published on [quay.io](https://quay.io/repository/wombelix/moinmoin-pypy2?tab=info).
+
+Workflow:
+
+  - Push new git tag to Gitlab mirror repository
+  - Gitlab send notification to quay.io build trigger
+  - Container image build and published on quay.io
+
+The container image with label `latest` is based to the last git tag and release. Branches like `main` will _not_ automatically build and uploaded.
+
+# Contribute
+
+Don't hesitate to provide Feedback, open an Issue or create an Pull / Merge Request.
+
+Just pick the workflow or platform you prefer and are most comfortable with.
+
+Feedback, Bug Reports or Patches via [Email](https://dominik.wombacher.cc/pages/contact.html) are also always welcome.
 
 # License
 
