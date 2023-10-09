@@ -2,6 +2,12 @@
  SPDX-FileCopyrightText: 2021 Dominik Wombacher <dominik@wombacher.cc>
  SPDX-License-Identifier: CC-BY-SA-4.0
 -->
+## 0.2.0 (2023-10-09)
+
+### Feat
+
+- upgrade to openSUSE Leap 15.5 and PyPy2.7 v7.3.13
+
 ## 0.1.0 (2021-10-09)
 
 ### Fix
