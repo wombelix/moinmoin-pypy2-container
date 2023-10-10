@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# SPDX-FileCopyrightText: 2021 Dominik Wombacher <dominik@wombacher.cc>
+# SPDX-FileCopyrightText: 2023 Dominik Wombacher <dominik@wombacher.cc>
 # SPDX-License-Identifier: AGPL-3.0-or-later
 #
 
