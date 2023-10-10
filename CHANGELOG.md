@@ -1,5 +1,5 @@
 <!--
- SPDX-FileCopyrightText: 2021 Dominik Wombacher <dominik@wombacher.cc>
+ SPDX-FileCopyrightText: 2023 Dominik Wombacher <dominik@wombacher.cc>
  SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 ## 0.3.0 (2023-10-10)
