@@ -2,6 +2,13 @@
  SPDX-FileCopyrightText: 2021 Dominik Wombacher <dominik@wombacher.cc>
  SPDX-License-Identifier: CC-BY-SA-4.0
 -->
+## 0.3.0 (2023-10-10)
+
+### Feat
+
+- Perform moinmoin maintenance tasks on startup
+- Replace existing user if env var is set, add option to change sitename
+
 ## 0.2.0 (2023-10-09)
 
 ### Feat
