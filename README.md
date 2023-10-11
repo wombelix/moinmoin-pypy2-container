@@ -66,6 +66,9 @@ The official Python 2 Runtime is [End-of-Life](https://www.python.org/doc/sunset
 - Manage nginx / ssl
     - `FQDN` = Servername inklusive Domain, default: moinmoint-pypy2.localhost
 
+- Manage MoinMoin wiki
+    - `MSITENAME` = Custom wiki site name, default: Untitled Wiki
+
 # Usage
 
 The following examples were tested with `podman` (4.7.0) in rootless mode on openSUSE Tumbleweed (20231005).
