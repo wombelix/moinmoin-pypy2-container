@@ -11,6 +11,10 @@ Ready to use, based on openSUSE Leap and the alternative Python Runtime [PyPy](h
 [![Container Repository on Quay](https://quay.io/repository/wombelix/moinmoin-pypy2/status)](https://quay.io/repository/wombelix/moinmoin-pypy2)
 [![REUSE status](https://api.reuse.software/badge/git.sr.ht/~wombelix/moinmoin-pypy2-container)](https://api.reuse.software/info/git.sr.ht/~wombelix/moinmoin-pypy2-container)
 
+## Notice
+
+This project is no longer actively maintained and archived
+
 # Table of Content
 
 * [Why](#why)
